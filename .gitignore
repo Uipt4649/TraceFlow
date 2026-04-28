@@ -1,0 +1,10 @@
+# Xcode build artifacts
+.DerivedData/
+
+# Xcode user-specific files
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+
+# Local docs / large binaries
+*.pdf
