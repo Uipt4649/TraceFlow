@@ -122,29 +122,7 @@ struct ContentView: View {
 private struct TraceBackgroundView: View {
     var body: some View {
         ZStack {
-            LinearGradient(
-                colors: [
-                    Color(red: 0.01, green: 0.01, blue: 0.04),
-                    Color(red: 0.03, green: 0.04, blue: 0.09),
-                    Color(red: 0.02, green: 0.07, blue: 0.15)
-                ],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-
-            GeometryReader { proxy in
-                let size = proxy.size
-                ForEach(0..<120, id: \.self) { index in
-                    let radius = CGFloat((index % 3) + 1)
-                    Circle()
-                        .fill(index.isMultiple(of: 5) ? Color.cyan.opacity(0.14) : Color.white.opacity(0.18))
-                        .frame(width: radius * 2, height: radius * 2)
-                        .position(
-                            x: CGFloat((index * 73) % 1000) / 1000 * max(size.width, 1),
-                            y: CGFloat((index * 151 + 37) % 1000) / 1000 * max(size.height, 1)
-                        )
-                }
-            }
+            TraceMetalBackgroundView()
 
             Rectangle()
                 .fill(
